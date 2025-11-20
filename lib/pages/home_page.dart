@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:personal_portfolio/widgets/animated_heading.dart';
+import 'package:personal_portfolio/widgets/nav_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -26,7 +28,7 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
           child:  Column(
             children: [
-              NavBar(scro),
+              NavBar(scrollController: _scrollController),
               Expanded(
                   child: SingleChildScrollView(
                     controller: _scrollController,
@@ -42,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                                    child: Column(
                                      crossAxisAlignment: CrossAxisAlignment.start,
                                      children: [
-                                       AnimatedHeding(
+                                       AnimatedHeading(
                                          lines: const ["Hi I\'m Shaban Shaikh, I build Flutter apps"]
                                        ),
                                        const SizedBox(height: 24),
@@ -67,12 +69,7 @@ class _HomePageState extends State<HomePage> {
                                  const SizedBox(width: 24),
                                  ClipRRect(
                                    borderRadius: BorderRadius.circular(16),
-                                   child: Image.network(
-                                     'https;//via.placeholder.com/300x300.png?text=Your+Photo',
-                                     width: 300,
-                                     height: 300,
-                                     fit: BoxFit.cover,
-                                   ),
+                                   child: Image.asset('assets/person.jpg')
                                  )
                                ]
                              ],
