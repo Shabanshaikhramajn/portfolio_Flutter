@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.interTextTheme(ThemeData(brightness: Brightness.dark).textTheme),
           useMaterial3: true,
         ),
+        debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.system,
       home:const HomePage(),
     );

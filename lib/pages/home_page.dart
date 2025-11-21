@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/widgets/animated_heading.dart';
 import 'package:personal_portfolio/widgets/nav_bar.dart';
-
+import 'package:get/get.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -11,12 +11,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final ScrollController _scrollController =  ScrollController();
 
   @override
   void dispose() {
     // TODO: implement dispose
-    _scrollController.dispose();
+
     super.dispose();
 
   }
@@ -28,48 +27,47 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
           child:  Column(
             children: [
-              NavBar(scrollController: _scrollController),
+              NavBar(),
               Expanded(
                   child: SingleChildScrollView(
-                    controller: _scrollController,
-                    child: Column(
+                  child: Column(
                       children: [
                        Padding(padding: EdgeInsets.symmetric(vertical: 48, horizontal: 30),
-                         child: ConstrainedBox(constraints: const BoxConstraints(maxWidth: 1100 ),
+                         child: ConstrainedBox(constraints: const BoxConstraints(maxWidth: 100 ),
                            child: Row(
                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                              crossAxisAlignment: CrossAxisAlignment.center,
                              children: [
-                               Expanded(
-                                   child: Column(
-                                     crossAxisAlignment: CrossAxisAlignment.start,
+                               Column(
+                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                 children: [
+                                   AnimatedHeading(
+                                     lines: const ["Hi I\'m ShabanAli Shaikh, I build Flutter apps"]
+                                   ),
+                                   const SizedBox(height: 24),
+                                   Wrap(
+                                     spacing: 12,
                                      children: [
-                                       AnimatedHeading(
-                                         lines: const ["Hi I\'m Shaban Shaikh, I build Flutter apps"]
+                                       ElevatedButton(onPressed: (){} ,
+                                           child: const Text('View Projects')
                                        ),
-                                       const SizedBox(height: 24),
-                                       Wrap(
-                                         spacing: 12,
-                                         children: [
-                                           ElevatedButton(onPressed: (){} ,
-                                               child: const Text('View Projects')
-                                           ),
-                                           OutlinedButton(
-                                             onPressed: () {},
-                                             child: const Text('Contact Me'),
-                                           ),
-                                         ],
-                                       )
+                                       OutlinedButton(
+                                         onPressed: () {},
+                                         child: const Text('Contact Me'),
+                                       ),
                                      ],
                                    )
-
-
+                                 ],
                                ),
                                if(width> 900)...[
                                  const SizedBox(width: 24),
-                                 ClipRRect(
-                                   borderRadius: BorderRadius.circular(16),
-                                   child: Image.asset('assets/person.jpg')
+                                 Container(
+                                   height: Get.height *.4,
+                                   width: Get.height *.4,
+                                   child: ClipRRect(
+                                     borderRadius: BorderRadius.circular(16),
+                                     child: Image.asset('assets/person.jpg')
+                                   ),
                                  )
                                ]
                              ],
