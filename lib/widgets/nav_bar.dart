@@ -16,9 +16,16 @@ class NavBar extends StatelessWidget {
              Text('Shaban Shaikh', style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18)),
               Row(
                 children: [
-                  TextButton(onPressed: (){}, child: const Text('About')),
-                  TextButton(onPressed: (){}, child: const Text('Projects')),
-                  TextButton(onPressed: (){}, child: const Text('Contact'))
+                  ElevatedButton(onPressed: (){}, child: const Text('Home', style: TextStyle(fontSize: 20, color: Colors.blue),)),
+                  SizedBox(height: 10),
+                  ElevatedButton(onPressed: (){}, child: const Text('Services')),
+                  SizedBox(height: 10),
+                  ElevatedButton(onPressed: (){}, child: const Text('About Me')),
+                  SizedBox(height: 10),
+                  ElevatedButton(onPressed: (){}, child: const Text('Projects')),
+                  SizedBox(height: 10),
+                  ElevatedButton(onPressed: (){}, child: const Text('Contact Me')),
+                  SizedBox(height: 10)
                 ],
               )
            ],
