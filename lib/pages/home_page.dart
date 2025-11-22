@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(16),
                                   child: Image.asset(
-                                    'assets/person.jpg',
+                                    'assets/person.png',
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -93,11 +93,67 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
+                    //  Services Section
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Text('-Services'),
+                            RichText(
+                              text: TextSpan(
+                                text: "Services ",
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  color: AppColors.whiteColor
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: "| Provide",
+                                    style: const TextStyle(
+                                      color: AppColors.primary,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                 ],
+                              ),
+                            )
+                            ],
+                        ),
+                        Container(
+                          height: 60,
+                          width: 160,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: AppColors.primary
+                          ),
+                          child: Row(
+                            children: [
+                              Text('See More',
+                               style: TextStyle(fontSize: 16, color: AppColors.whiteColor),
 
+                              ),
+                              SizedBox(width: 30),
+                              Container(
+                                height: 40,
+                                width: 40,
+                                decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  shape: BoxShape.circle
+                                ),
+                                child: Icon(
+                                  Icons.align_horizontal_left,
+                                  color: AppColors.primary,
+                                ),
+                              )
+                           ],
+                          ),
+                        )
+                      ],
+                    ),
                     // TODO: Projects, About, Contact sections
-                    const SizedBox(height: 120),
-
-                    const Text(
+                     SizedBox(height: 120),
+                       const Text(
                       "Footer - Shaban Shaikh © 2025",
                       style: TextStyle(color: Colors.grey),
                     ),

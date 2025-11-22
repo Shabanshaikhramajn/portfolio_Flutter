@@ -18,8 +18,8 @@ class AppColors {
   // ---------------------------
   // TEXT COLORS
   // ---------------------------
-  static const Color textPrimary = Colors.white;
-  static const Color textSecondary = Color(0xFFBDBDBD);
+  static const Color whiteColor = Colors.white;
+  static const Color blackColor = Colors.black;
 
   // ---------------------------
   // BORDER / DIVIDER / SHADOWS
